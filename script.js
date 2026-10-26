@@ -3,8 +3,8 @@ const contact = {
     firstName: "Christian",
     lastName: "Angeles",
     jobTitle: "Computer Engineer",
-    phone: "YOUR_PHONE_NUMBER",
-    email: "YOUR_EMAIL@example.com"
+    phone: "09954024903",
+    email: "jaychristian157@gmail.com"
 };
 
 const saveButton = document.getElementById("save-contact");
