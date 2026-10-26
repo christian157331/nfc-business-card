@@ -1,11 +1,11 @@
 
 // Change these details to your own information.
 const contact = {
-    firstName: "Your",
-    lastName: "Name",
-    jobTitle: "Your Profession",
-    phone: "+63 912 345 6789",
-    email: "your.email@example.com",
+    firstName: "Christian",
+    lastName: "Angeles",
+    jobTitle: "Computer Engineer",
+    phone: "+09954024903",
+    email: "jaychristian157@gmail.com",
     website: "https://your-website-url.com"
 };
 
