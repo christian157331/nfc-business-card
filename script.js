@@ -2,12 +2,10 @@
 const contact = {
     firstName: "Christian",
     lastName: "Angeles",
-    jobTitle: "Computer Engineer",
-    phone: "09954024903",
-    email: "jaychristian157@gmail.com"
+    phone: "YOUR_PHONE_NUMBER",
+    email: "YOUR_REAL_EMAIL@example.com",
+    jobTitle: "Computer Engineer"
 };
-
-const saveButton = document.getElementById("save-contact");
 
 document.getElementById("save-contact").addEventListener("click", function () {
     const vCard = [
@@ -17,26 +15,17 @@ document.getElementById("save-contact").addEventListener("click", function () {
         "FN:Christian Angeles",
         "TITLE:Computer Engineer",
         `TEL;TYPE=CELL:${contact.phone}`,
-        `EMAIL;TYPE=INTERNET:${contact.email}`,
+        `EMAIL:${contact.email}`,
         "END:VCARD"
     ].join("\r\n");
 
-    const file = new Blob(
-        [vCard],
-        { type: "text/vcard;charset=utf-8" }
+    const contactURL = URL.createObjectURL(
+        new Blob([vCard], { type: "text/vcard;charset=utf-8" })
     );
 
-    const fileURL = URL.createObjectURL(file);
-    const downloadLink = document.createElement("a");
-
-    downloadLink.href = fileURL;
-    downloadLink.download = "Christian_Angeles.vcf";
-
-    document.body.appendChild(downloadLink);
-    downloadLink.click();
-    downloadLink.remove();
+    window.location.href = contactURL;
 
     setTimeout(function () {
-        URL.revokeObjectURL(fileURL);
-    }, 1000);
+        URL.revokeObjectURL(contactURL);
+    }, 10000);
 });
