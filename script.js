@@ -9,7 +9,7 @@ const contact = {
 
 const saveButton = document.getElementById("save-contact");
 
-saveButton.addEventListener("click", function () {
+document.getElementById("save-contact").addEventListener("click", function () {
     const vCard = [
         "BEGIN:VCARD",
         "VERSION:3.0",
