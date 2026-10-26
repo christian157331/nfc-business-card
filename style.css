@@ -1,5 +1,5 @@
 
-/* Basic page settings */
+/* Reset */
 * {
     margin: 0;
     padding: 0;
@@ -7,91 +7,77 @@
 }
 
 :root {
-    --background: #101210;
-    --card: #191c18;
-    --gold: #d8b779;
-    --white: #f5f3ed;
+    --background: #0c0e0d;
+    --card: #171a17;
+    --gold: #d9b878;
+    --white: #f6f4ee;
     --muted: #a4a69e;
-    --border: #34372f;
+    --border: #34382f;
 }
 
 body {
     min-height: 100vh;
-    padding: 24px 16px;
+    padding: 30px 16px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Segoe UI", Arial, sans-serif;
     color: var(--white);
     background:
-        radial-gradient(
-            circle at top,
-            #303125 0%,
-            var(--background) 48%
-        );
+        radial-gradient(ellipse at top, #343528 0%, transparent 55%),
+        var(--background);
 }
 
 .business-card {
     width: 100%;
-    max-width: 420px;
-    padding: 30px 26px;
-    background: var(--card);
+    max-width: 430px;
+    padding: 32px 28px;
+    background: linear-gradient(145deg, #1c201b, #131512);
     border: 1px solid var(--border);
-    border-radius: 24px;
-    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+    border-radius: 26px;
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.45);
+    animation: appear 0.6s ease;
 }
 
-/* Small heading */
 .top-label {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 9px;
+    text-align: center;
     color: var(--gold);
     font-size: 10px;
-    font-weight: bold;
-    letter-spacing: 2px;
+    font-weight: 700;
+    letter-spacing: 3px;
 }
 
-.status-dot {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: var(--gold);
-}
-
-/* Profile section */
 .profile {
+    padding: 38px 0 30px;
     text-align: center;
-    padding: 34px 0 28px;
 }
 
 .avatar {
-    width: 100px;
-    height: 100px;
-    margin: 0 auto 24px;
+    width: 108px;
+    height: 108px;
+    margin: 0 auto 26px;
     display: flex;
     align-items: center;
     justify-content: center;
     border: 2px solid var(--gold);
     border-radius: 50%;
-    background: linear-gradient(135deg, #4b4638, #22251f);
+    background: linear-gradient(135deg, #4c493b, #22251f);
     color: var(--gold);
     font-size: 30px;
-    font-weight: bold;
+    font-weight: 700;
     letter-spacing: 2px;
+    box-shadow: 0 0 30px rgba(217, 184, 120, 0.08);
 }
 
 .eyebrow {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     color: var(--gold);
     font-size: 10px;
     letter-spacing: 3px;
 }
 
 h1 {
-    font-size: clamp(27px, 7vw, 36px);
-    line-height: 1.2;
+    font-size: clamp(28px, 7vw, 36px);
     letter-spacing: -1px;
     overflow-wrap: anywhere;
 }
@@ -103,7 +89,7 @@ h1 {
 }
 
 .bio {
-    max-width: 290px;
+    max-width: 280px;
     margin: 16px auto 0;
     color: var(--muted);
     font-size: 13px;
@@ -115,7 +101,6 @@ h1 {
     background: var(--border);
 }
 
-/* Contact buttons */
 .contact-section {
     padding: 28px 0;
 }
@@ -126,82 +111,66 @@ h2 {
 }
 
 .section-description {
-    margin-top: 8px;
-    margin-bottom: 20px;
+    margin: 9px 0 20px;
     color: var(--muted);
     font-size: 12px;
-    line-height: 1.6;
+    line-height: 1.7;
 }
 
 .button {
     width: 100%;
     min-height: 52px;
     margin-top: 12px;
-    padding: 14px 16px;
+    padding: 15px 17px;
     display: flex;
     align-items: center;
-    gap: 12px;
+    justify-content: space-between;
     border: 1px solid var(--border);
-    border-radius: 12px;
+    border-radius: 13px;
     font-size: 13px;
     font-weight: 600;
-    text-align: left;
     text-decoration: none;
     cursor: pointer;
-    transition: transform 0.2s, background 0.2s;
-}
-
-.button:hover {
-    transform: translateY(-2px);
+    transition: 0.25s ease;
 }
 
 .primary-button {
-    justify-content: space-between;
     border-color: var(--gold);
     background: var(--gold);
     color: #171711;
 }
 
 .secondary-button {
-    justify-content: space-between;
     background: #22251f;
     color: var(--white);
 }
 
-.button-icon {
-    font-size: 20px;
+.button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.2);
 }
 
-.button-arrow {
-    margin-left: auto;
-    font-size: 17px;
-}
-
-/* Social media */
 .social-section {
     padding: 4px 0 28px;
 }
 
 .social-links {
     display: flex;
-    gap: 12px;
+    gap: 10px;
     margin-top: 18px;
 }
 
 .social-link {
-    width: 48px;
-    height: 48px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    flex: 1;
+    padding: 14px 5px;
+    text-align: center;
     border: 1px solid var(--border);
-    border-radius: 14px;
+    border-radius: 12px;
     background: #22251f;
     color: var(--gold);
-    font-size: 14px;
-    font-weight: bold;
+    font-size: 12px;
     text-decoration: none;
-    transition: 0.2s;
+    transition: 0.2s ease;
 }
 
 .social-link:hover {
@@ -209,49 +178,42 @@ h2 {
     color: #171711;
 }
 
-/* Footer */
 footer {
     padding-top: 20px;
     border-top: 1px solid var(--border);
     text-align: center;
-}
-
-footer p {
     color: var(--gold);
     font-size: 9px;
-    font-weight: bold;
+    font-weight: 700;
     letter-spacing: 2px;
 }
 
-footer span {
-    display: block;
-    margin-top: 9px;
-    color: var(--muted);
-    font-size: 10px;
-}
-
-/* Small phone screens */
-@media (max-width: 360px) {
-    .business-card {
-        padding: 24px 18px;
-    }
-
-    .profile {
-        padding-top: 28px;
-    }
-}
-
-/* Keyboard accessibility */
 .button:focus-visible,
 .social-link:focus-visible {
     outline: 2px solid var(--gold);
     outline-offset: 4px;
 }
 
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 360px) {
+    .business-card {
+        padding: 25px 18px;
+    }
+}
+
 @media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
+    *, *::before, *::after {
+        animation: none !important;
         transition: none !important;
     }
 }
